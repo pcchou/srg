@@ -30,6 +30,7 @@ Bash版本：srg.sh
   * Ping值(ms)
   * (Optional)[伺服編號](http://paste.ubuntu.com/8410453/) （[完整版本](http://www.speedtest.net/speedtest-servers-static.php)）
 * 例如：`./srg.sh 314150 926530 58979` 會產生出
+* 
 ![真相](http://www.speedtest.net/result/3782546990.png)
 
 PHP版本：php/func.php與url.php
@@ -48,6 +49,7 @@ PHP版本：php/func.php與url.php
   * Ping值(ms) (pingms)
   * (Optional)[伺服編號](http://paste.ubuntu.com/8410453/) （[完整版本](http://www.speedtest.net/speedtest-servers-static.php)）(srv)
 * 例如：`http://yourdomain.org/url.php?dlkbps=314150&ulkbps=926530&pingms=58979` 會產生出
+* 
 ![真相](http://www.speedtest.net/result/3782546990.png)
 * func.php範例code: [用func.php寫的url.php](http://pastebin.com/mDsC9yHm)
 
