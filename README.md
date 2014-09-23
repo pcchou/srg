@@ -1,4 +1,4 @@
-speedtest-cheat
+speedtest-result-gen
 ===============
 
-各種Cheat Speedtest.net的工具 XDDDD
+各種惡搞 Speedtest.net的工具 XDDDD
