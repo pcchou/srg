@@ -6,6 +6,7 @@ speedtest-result-generator
 Python版本：srg.py
 ------------------
 
+* 作者：[Pc Chou](http://about.me/pcchou)
 * 環境：Python 2
 * 呼叫方法： python srg.py 參數
 * 參數說明：
