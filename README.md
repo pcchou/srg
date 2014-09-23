@@ -14,5 +14,6 @@ Python版本：srg.py
   * Ping值(ms)
   * [伺服編號](http://paste.ubuntu.com/8410453/) （[完整版本](http://www.speedtest.net/speedtest-servers-static.php)）
 * 例如：python srg.py 314150 926530 58979 會產生出
+
 ![真相](http://www.speedtest.net/result/3781272742.png)
 
