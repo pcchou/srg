@@ -15,37 +15,33 @@
 # by Pcchou at #ysitd at Freenode IRC
 # http://about.me/pcchou
 
-if (isset($_GET["dlkbps"]) && isset($_GET["ulkbps"]) && isset($_GET["pingms"])) {
-    $dlkbps = $_GET["dlkbps"];
-    $ulkbps = $_GET["ulkbps"];
-    $pingms = $_GET["pingms"];
-    $srv = isset($_GET["srv"]) ? $_GET["srv"] : "2181" ;
-    $accuracy = 1;
-    $hash = md5($pingms . "-" . $ulkbps . "-" . $dlkbps . "-297aae72");
-    $headers = array(
-            'POST /api/api.php HTTP/1.1',
-            'Content-Type: application/x-www-form-urlencoded',
-            'Referer: http://c.speedtest.net/flash/speedtest.swf',
-    );
-    $post = "download=". $dlkbps . "&ping=" . $pingms . "&upload=" . $ulkbps . "&promo=&startmode=pingselect&recommendedserverid=" . $srv . "&accuracy=1&serverid=" . $srv . "&hash=" . $hash;
-    $curl = curl_init();
-    curl_setopt($curl, CURLOPT_URL, 'http://www.speedtest.net/api/api.php');
-    curl_setopt($curl, CURLOPT_ENCODING, "" );
-    curl_setopt($curl, CURLOPT_POST, 1);
-    curl_setopt($curl, CURLOPT_POSTFIELDS, $post);
-    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($curl, CURLOPT_FRESH_CONNECT, 1);
-    $results = curl_exec($curl);
-    foreach (explode('&', $results) as $result) {
-        $data = explode("=", $result);
-        if (urldecode($data[0]) == "resultid"){
-            $imgf = 'http://www.speedtest.net/result/' . urldecode($data[1]) . ".png";
-        }
+$dlkbps = $_GET["dlkbps"];
+$ulkbps = $_GET["ulkbps"];
+$pingms = $_GET["pingms"];
+$srv = isset($_GET["srv"]) ? $_GET["srv"] : "2181" ;
+$accuracy = 1;
+$hash = md5($pingms . "-" . $ulkbps . "-" . $dlkbps . "-297aae72");
+$headers = array(
+        'POST /api/api.php HTTP/1.1',
+        'Content-Type: application/x-www-form-urlencoded',
+        'Referer: http://c.speedtest.net/flash/speedtest.swf',
+);
+$post = "download=". $dlkbps . "&ping=" . $pingms . "&upload=" . $ulkbps . "&promo=&startmode=pingselect&recommendedserverid=" . $srv . "&accuracy=1&serverid=" . $srv . "&hash=" . $hash;
+$curl = curl_init();
+curl_setopt($curl, CURLOPT_URL, 'http://www.speedtest.net/api/api.php');
+curl_setopt($curl, CURLOPT_ENCODING, "" );
+curl_setopt($curl, CURLOPT_POST, 1);
+curl_setopt($curl, CURLOPT_POSTFIELDS, $post);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($curl, CURLOPT_FRESH_CONNECT, 1);
+$results = curl_exec($curl);
+foreach (explode('&', $results) as $result) {
+    $data = explode("=", $result);
+    if (urldecode($data[0]) == "resultid"){
+        $imgf = 'http://www.speedtest.net/result/' . urldecode($data[1]) . ".png";
     }
-
-    echo $imgf;
-} else {
-    trigger_error("This is madness!");
 }
+
+echo $imgf;
 ?>
