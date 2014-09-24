@@ -6,9 +6,14 @@ var crypto = require('crypto');
 function getResult(options, callback) {
     options = options || {};
     
+    var dlkbpsRandomizeRange = {max : 1, min : 0.8};
+    var ulkbpsRandomizeRange = {max : 1, min : 0.8};
+    var pingmsRandomizeRange = {max : 1.2, min : 0.8};
+    
     var dlkbpsRange = {max : 1999999, min : 1};
     var ulkbpsRange = {max : 1999999, min : 1};
     var pingmsRange = {max : 65535, min : 0};
+    
     
     var dlkbps = isPositive(options.download) ? Math.floor(options.download) : 200000;
     var ulkbps = isPositive(options.upload) ? Math.floor(options.upload) : 200000;
@@ -16,9 +21,9 @@ function getResult(options, callback) {
     var srv = isPositive(options.server) ? options.server : 5056;
     
     if (!options.noRandomize) {
-        dlkbps = randomize(dlkbps);
-        pingms = randomize(pingms);
-        ulkbps = randomize(ulkbps);
+        dlkbps = randomize(dlkbps, dlkbpsRandomizeRange);
+        ulkbps = randomize(ulkbps, ulkbpsRandomizeRange);
+        pingms = randomize(pingms, pingmsRandomizeRange);
     }
     
     dlkbps = fixRange(dlkbps, dlkbpsRange);
@@ -48,8 +53,8 @@ function getResult(options, callback) {
         return shasum.digest('hex');
     }
 
-    function randomize(number) {
-        return Math.floor(number * (0.8 + 0.2 * Math.random()));
+    function randomize(number, range) {
+        return Math.floor(number * (range.min + (range.max - range.min) * Math.random()));
     }
     
     function parse(res) {
