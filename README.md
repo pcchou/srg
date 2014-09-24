@@ -51,14 +51,14 @@ PHP版本：
 * 呼叫方法：
   * func.php
     * 請先include本檔案，再用 `getImage(參數)` 函式呼叫。
-  * url.php
+  * srg.php
     * 直接使用該檔案，用GET參數呼叫。
-* url.php參數說明：
+* srg.php參數說明：
   * {mode} normal或smart (smart會自動為您隨機輸出，給你最近似實際情況的數值) (若為normal可不填此項)
   * {dlkbps} 下載頻寬(kbps)
   * {ulkbps} 上傳頻寬(kbps)
   * {pingms} Ping值(ms)
-  * (可選)[伺服編號](http://paste.ubuntu.com/8410453/) （[完整版本](http://www.speedtest.net/speedtest-servers-static.php)）(srv)
+  * {srv} (可選)[伺服編號](http://paste.ubuntu.com/8410453/) （[完整版本](http://www.speedtest.net/speedtest-servers-static.php)
 * 例如：`http://yourdomain.org/url.php?dlkbps=314150&ulkbps=926530&pingms=58979` 會產生出（網址）
 
 ![真相](http://www.speedtest.net/result/3782546990.png)
@@ -68,7 +68,7 @@ PHP版本：
 ![真相](http://www.speedtest.net/result/3783848922.png)
 
 * func.php範例code: [點窩](http://pastebin.com/FUnA0G0F)
-* 註：url.php沒有調用func.php，兩者分開，請安心使用。
+* 註：srg.php沒有調用func.php，兩者分開，請安心使用。
 
 VB.net版本：
 ------------------
