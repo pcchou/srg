@@ -15,9 +15,21 @@
 # by Pcchou at #ysitd at Freenode IRC
 # http://about.me/pcchou
 
-$dlkbps = $_GET["dlkbps"];
-$ulkbps = $_GET["ulkbps"];
-$pingms = $_GET["pingms"];
+if ( isset($_GET["mode"]) && $_GET["mode"] == "smart" ) {
+    $dlkbps = floor( (float)$_GET["dlkbps"] * ( 0.95 + ( rand(-50000,20000) / 1000000 ) ) );
+    $ulkbps = floor($dlkbps * ( rand(9250,9750) / 10000 ) ) ;
+    echo $dlkbps . " " . $ulkbps;
+    if ( $_GET["pingms"] >= 4 ) {
+        $pingms = (int)$_GET["pingms"] + rand(-3,10);
+    } else {
+        $pingms = $_GET["pingms"];
+    }
+} else {
+        $dlkbps = $_GET["dlkbps"];
+        $ulkbps = $_GET["ulkbps"];
+        $pingms = $_GET["pingms"];
+}
+
 $srv = isset($_GET["srv"]) ? $_GET["srv"] : "2181" ;
 $accuracy = 1;
 $hash = md5($pingms . "-" . $ulkbps . "-" . $dlkbps . "-297aae72");
