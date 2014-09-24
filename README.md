@@ -73,9 +73,9 @@ PHP版本：
 VB.net版本：
 ------------------
 
-* 作者：[21](http://)
-* 環境：
-* 呼叫方法：安裝 Framework 4.5 並執行 (GUI)
+* 作者：[21](http://home.gamer.com.tw/X21999125X)
+* 環境：Framework 2.0
+* 呼叫方法：安裝 Framework 2.0 並把Server-List和執行檔放在同個資料夾下方可執行 (GUI)
 
 Java版本：
 ------------------

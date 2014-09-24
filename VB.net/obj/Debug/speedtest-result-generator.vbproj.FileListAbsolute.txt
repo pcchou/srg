@@ -1,0 +1,9 @@
+C:\Users\rick\Documents\Visual Studio 2013\Projects\speedtest-result-generator\bin\Debug\speedtest-result-generator.exe
+C:\Users\rick\Documents\Visual Studio 2013\Projects\speedtest-result-generator\bin\Debug\speedtest-result-generator.pdb
+C:\Users\rick\Documents\Visual Studio 2013\Projects\speedtest-result-generator\bin\Debug\speedtest-result-generator.xml
+C:\Users\rick\Documents\Visual Studio 2013\Projects\speedtest-result-generator\obj\Debug\speedtest_result_generator.Form1.resources
+C:\Users\rick\Documents\Visual Studio 2013\Projects\speedtest-result-generator\obj\Debug\speedtest_result_generator.Resources.resources
+C:\Users\rick\Documents\Visual Studio 2013\Projects\speedtest-result-generator\obj\Debug\speedtest-result-generator.vbproj.GenerateResource.Cache
+C:\Users\rick\Documents\Visual Studio 2013\Projects\speedtest-result-generator\obj\Debug\speedtest-result-generator.exe
+C:\Users\rick\Documents\Visual Studio 2013\Projects\speedtest-result-generator\obj\Debug\speedtest-result-generator.xml
+C:\Users\rick\Documents\Visual Studio 2013\Projects\speedtest-result-generator\obj\Debug\speedtest-result-generator.pdb
