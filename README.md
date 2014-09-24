@@ -67,7 +67,7 @@ PHP版本：
 
 ![真相](http://www.speedtest.net/result/3783848922.png)
 
-* func.php範例code: [點窩](http://pastebin.com/P0Mqjr9R)
+* func.php範例code: [點窩](http://pastebin.com/FUnA0G0F)
 * 註：url.php沒有調用func.php，兩者分開，請安心使用。
 
 VB.net版本：
