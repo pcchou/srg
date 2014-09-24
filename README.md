@@ -53,3 +53,10 @@ PHP版本：php/func.php與url.php
 ![真相](http://www.speedtest.net/result/3782546990.png)
 * func.php範例code: [用func.php寫的url.php](http://pastebin.com/mDsC9yHm)
 * 註：url.php沒有調用func.php，兩者分開，請安心使用。
+
+VB.net版本：VB.net/*
+------------------
+
+* 作者：[海豹](http://about.me/seadog007)
+* 環境：VB.net 2012
+* 呼叫方法：安裝 Framework 4.5 並執行 (GUI)
