@@ -34,12 +34,12 @@ if sys.argv[1] == "normal":
     dlkbps = sys.argv[2]
     ulkbps = sys.argv[3]
 elif sys.argv[1] == "smart":
-    dlkbps = floor( sys.argv[2] * ( 0.95 + ( randrange(-50000,20000) / 1000000 )) )
+    dlkbps = floor( float(sys.argv[2]) * ( 0.95 + ( float(randrange(-50000,20000)) / 1000000 )) )
     ulkbps = dlkbps * 2
     while ulkbps > dlkbps:
-        ulkbps = floor( sys.argv[3] * ( 0.95 + ( randrange(-50000,20000) / 1000000 )) )
+        ulkbps = floor( float(sys.argv[3]) * ( 0.95 + ( float(randrange(-50000,20000)) / 1000000 )) )
     if sys.argv[4] >= 4:
-        pingms = sys.argv[3] + randrange(-3,10)
+        pingms = int(sys.argv[4]) + randrange(-3,10)
     elif sys.argv[4] < 4:
         pingms = sys.argv[4]
 else:
@@ -47,16 +47,16 @@ else:
     sys.exit()
 
 rawRequest = [
-    'download=%s' % dlkbps,
+    'download=%s' % int(dlkbps),
     'ping=%s' % pingms,
-    'upload=%s' % ulkbps,
+    'upload=%s' % int(ulkbps),
     'promo=',
     'startmode=%s' % 'pingselect',
     'recommendedserverid=%s' % srv,
     'accuracy=%s' % 1,
     'serverid=%s' % srv,
     'hash=%s' % md5(('%s-%s-%s-%s' %
-                     (pingms, ulkbps, dlkbps, '297aae72'))
+                     (pingms, int(ulkbps), int(dlkbps), '297aae72'))
                     .encode()).hexdigest()]
 
 req = Request('http://www.speedtest.net/api/api.php',
