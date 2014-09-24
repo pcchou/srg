@@ -76,3 +76,18 @@ VB.net版本：
 * 作者：[海豹](http://about.me/seadog007)
 * 環境：VB.net 2012
 * 呼叫方法：安裝 Framework 4.5 並執行 (GUI)
+
+Java版本：
+------------------
+
+* 作者：[ifTNT](http://home.gamer.com.tw/homeindex.php?owner=happyjohn369)
+* 環境：Java 7
+* 呼叫方法： `com.github.YSITD.srg.api.getImage(參數)`
+* 參數說明（請依照順序）：
+  * 下載頻寬(kbps)
+  * 上傳頻寬(kbps)
+  * Ping值(ms)
+  * (填0或負值會使用預設值)[伺服編號](http://paste.ubuntu.com/8410453/) （[完整版本](http://www.speedtest.net/speedtest-servers-static.php)）
+* 例如com.github.YSITD.srg.api.getImage(65536,32768,1,0);會產出
+
+![真相](http://www.speedtest.net/result/3783897856.png)
