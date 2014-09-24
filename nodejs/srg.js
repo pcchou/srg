@@ -6,15 +6,37 @@ var crypto = require('crypto');
 function getResult(options, callback) {
     options = options || {};
     
-    var dlkbps = options.download || 200000;
-    var pingms = options.ping ||  40;;
-    var ulkbps = options.upload || 200000;
-    var srv = options.server || 5056;
-
+    var dlkbpsRange = {max : 1999999, min : 1};
+    var ulkbpsRange = {max : 1999999, min : 1};
+    var pingmsRange = {max : 65535, min : 0};
+    
+    var dlkbps = isPositive(options.download) ? Math.floor(options.download) : 200000;
+    var ulkbps = isPositive(options.upload) ? Math.floor(options.upload) : 200000;
+    var pingms = isPositive(options.ping) ? Math.floor(options.ping) : 40;
+    var srv = isPositive(options.server) ? options.server : 5056;
+    
     if (!options.noRandomize) {
         dlkbps = randomize(dlkbps);
         pingms = randomize(pingms);
         ulkbps = randomize(ulkbps);
+    }
+    
+    dlkbps = fixRange(dlkbps, dlkbpsRange);
+    ulkbps = fixRange(ulkbps, ulkbpsRange);
+    pingms = fixRange(pingms, pingmsRange);
+    
+    function isPositive(val) {
+        return typeof val === "number" && isFinite(val) && val >= 0;
+    }
+    
+    function fixRange(val, limit) {
+        if (val > limit.max) {
+            return limit.max;
+        }
+        if (val < limit.min) {
+            return limit.min;
+        }
+        return val;
     }
     
     function hash(parameters, algorithm, seperator) {
