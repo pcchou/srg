@@ -18,7 +18,7 @@
 if ( isset($_GET["mode"]) && $_GET["mode"] == "smart" ) {
     $dlkbps = floor( (float)$_GET["dlkbps"] * ( 0.95 + ( rand(-50000,20000) / 1000000 ) ) );
     $ulkbps = floor($dlkbps * ( rand(9250,9750) / 10000 ) ) ;
-    echo $dlkbps . " " . $ulkbps;
+    
     if ( $_GET["pingms"] >= 4 ) {
         $pingms = (int)$_GET["pingms"] + rand(-3,10);
     } else {
