@@ -21,7 +21,7 @@ Python版本：srg.py
 Bash版本：srg.sh
 ------------------
 
-* 作者：[Denny Huang](mailto:denny0223@gmail.com)
+* 作者：[Denny Huang](https://github.com/denny0223)
 * 環境：Bash
 * 呼叫方法: `./srg.sh 參數`
 * 參數說明：
