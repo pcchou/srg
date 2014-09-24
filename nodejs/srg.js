@@ -27,7 +27,7 @@ function getResult(options, callback) {
     }
 
     function randomize(number) {
-        return Math.floor(number * (0.8 + 0.2 * Math.random()));
+        return Math.floor(number * (0.9 + 0.2 * Math.random()));
     }
     
     function parse(res) {
