@@ -13,9 +13,9 @@ if [ $1 == "normal" ]; then
     dlkbps=$2
     ulkbps=$3
 elif [ $1 == "smart" ]; then
-    dlkbps=$(( $2 * ( 950000 + $(rand -30000 20000) ) / 1000000 ))
-    ulkbps=$(( $3 * ( 950000 + $(rand -30000 20000) ) / 1000000 ))
-    ulkbps=$(( ( $ulkbps * $(rand 9250 9750) ) / 10000 ))
+    dlkbps=$(( $2 * ( 950000 + $(rand -25000 25000) ) / 1000000 ))
+    ulkbps=$(( $3 * ( 950000 + $(rand -25000 25000) ) / 1000000 ))
+    ulkbps=$(( ( $ulkbps * $(rand 9350 9650) ) / 10000 ))
     if [ $4 -ge 4 ]; then
         pingms=$(( $4 + $(rand -3 10)))
     else
