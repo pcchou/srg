@@ -19,16 +19,32 @@ import sys
 from urllib2 import urlopen, Request
 from hashlib import md5
 from urlparse import parse_qs
+from random import randrange
+from math import floor
 
-pingms = sys.argv[3]
-dlkbps = sys.argv[1]
-ulkbps = sys.argv[2]
 try:
-      sys.argv[4]
+      sys.argv[5]
 except IndexError:
     srv = 2181
 else:
-    srv = sys.argv[4]
+    srv = sys.argv[5]
+
+if sys.argv[1] == "normal":
+    pingms = sys.argv[4]
+    dlkbps = sys.argv[2]
+    ulkbps = sys.argv[3]
+elif sys.argv[1] == "smart":
+    dlkbps = floor( sys.argv[2] * ( 0.95 + ( randrange(-50000,20000) / 1000000 )) )
+    ulkbps = dlkbps * 2
+    while ulkbps > dlkbps:
+        ulkbps = floor( sys.argv[3] * ( 0.95 + ( randrange(-50000,20000) / 1000000 )) )
+    if sys.argv[4] >= 4:
+        pingms = sys.argv[3] + randrange(-3,10)
+    elif sys.argv[4] < 4:
+        pingms = sys.argv[4]
+else:
+    print "This is madness!"
+    sys.exit()
 
 rawRequest = [
     'download=%s' % dlkbps,
