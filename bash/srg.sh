@@ -26,8 +26,6 @@ else
 fi
 srv=${5:-2181}
 
-echo $dlkbps
-echo $ulkbps
 hash=$(echo -n $pingms-$ulkbps-$dlkbps-297aae72 | md5sum | awk '{print $1}')
 resultid=$(curl -s -d "download=$dlkbps&ping=$pingms&upload=$ulkbps&promo=&startmode=pingselect&recommendedserverid=2181&accuracy=1&serverid=$srv&hash=$hash" -e http://c.speedtest.net/flash/speedtest.swf http://www.speedtest.net/api/api.php | awk -F=\|\& '{print $2}')
 
