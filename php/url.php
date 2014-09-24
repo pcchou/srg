@@ -15,6 +15,8 @@
 # by Pcchou at #ysitd at Freenode IRC
 # http://about.me/pcchou
 
+header('Access-Control-Allow-Origin: *');
+
 if ( isset($_GET["mode"]) && $_GET["mode"] == "smart" ) {
     $dlkbps = floor( (float)$_GET["dlkbps"] * ( 0.95 + ( rand(-30000,20000) / 1000000 ) ) );
     $ulkbps = floor( (float)$_GET["ulkbps"] * ( 0.95 + ( rand(-30000,20000) / 1000000 ) ) );
