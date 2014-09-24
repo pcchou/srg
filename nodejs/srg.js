@@ -6,11 +6,17 @@ var crypto = require('crypto');
 function getResult(options, callback) {
     options = options || {};
     
-    var dlkbps = options.download || Math.floor(180000 + 40000 * Math.random());
-    var pingms = options.ping ||  Math.floor(30 + 20 * Math.random());;
-    var ulkbps = options.upload || Math.floor(180000 + 40000 * Math.random());
+    var dlkbps = options.download || 200000;
+    var pingms = options.ping ||  40;;
+    var ulkbps = options.upload || 200000;
     var srv = options.server || 5056;
 
+    if (!options.noRandomize) {
+        dlkbps = randomize(dlkbps);
+        pingms = randomize(pingms);
+        ulkbps = randomize(ulkbps);
+    }
+    
     function hash(parameters, algorithm, seperator) {
         seperator = seperator || "-";
         algorithm = algorithm || "md5"; 
@@ -20,6 +26,10 @@ function getResult(options, callback) {
         return shasum.digest('hex');
     }
 
+    function randomize(number) {
+        return Math.floor(number * (0.9 + 0.2 * Math.random()));
+    }
+    
     function parse(res) {
         var i, tempArr, tempArr2, id, resObj;
         res = res.toString();
@@ -84,6 +94,7 @@ getResult({}, function(ob) {
         upload [Number]
         ping [Number]
         server [Number]
+        noRandomize [boolean]
     
 */
 
