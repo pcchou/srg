@@ -73,15 +73,15 @@ PHP版本：
 VB.net版本(ver.1)：
 ------------------
 
-* 作者：[海豹](http://about.me/seadog007)
-* 環境：VB.net 2012
-* 呼叫方法：安裝 Framework 4.5 並執行 (GUI)
-
-VB.net版本(ver.1)：
-------------------
-
 * 作者：[21](http://)
 * 環境：
+* 呼叫方法：安裝 Framework 4.5 並執行 (GUI)
+
+VB.net版本(ver.2)：
+------------------
+
+* 作者：[海豹](http://about.me/seadog007)
+* 環境：VB.net 2012
 * 呼叫方法：安裝 Framework 4.5 並執行 (GUI)
 
 Java版本：
