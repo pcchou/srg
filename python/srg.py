@@ -34,8 +34,8 @@ if sys.argv[1] == "normal":
     dlkbps = sys.argv[2]
     ulkbps = sys.argv[3]
 elif sys.argv[1] == "smart":
-    dlkbps = floor( float(sys.argv[2]) * ( 0.95 + ( float(randrange(-25000,25000)) / 1000000 )) )
-    ulkbps = floor( float(sys.argv[3]) * ( 0.95 + ( float(randrange(-25000,25000)) / 1000000 )) )
+    dlkbps = floor( float(sys.argv[2]) * ( 0.975 + ( float(randrange(-250000,200000)) / 10000000 )) )
+    ulkbps = floor( float(sys.argv[3]) * ( 0.975 + ( float(randrange(-250000,200000)) / 10000000 )) )
     ulkbps = floor( ulkbps * ( float(randrange(9350,9650)) / 10000 ) )
     if sys.argv[4] >= 4:
         pingms = int(sys.argv[4]) + randrange(-3,10)

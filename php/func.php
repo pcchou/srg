@@ -46,9 +46,9 @@ function getSpeedtestImageURL($dlkbps,$ulkbps,$pingms,$srv = 2181)
 
 function getSpeedtestImageURLS($dlkbpso,$ulkbpso,$pingmso,$srv = 2181)
 {
-    $dlkbps = floor( (float)$dlkbpso * ( 0.95 + ( rand(-25000,25000) / 1000000 ) ) );
-    $ulkbps = floor( (float)$ulkbpso * ( 0.95 + ( rand(-25000,25000) / 1000000 ) ) );
-    $ulkbps = floor($ulkbps * ( rand(9350,9650) / 10000 ) ) ;
+    $dlkbps = floor( (float)$dlkbpso * ( 0.975 + ( (float)rand(-250000,200000) / 10000000 ) ) );
+    $ulkbps = floor( (float)$ulkbpso * ( 0.975 + ( (float)rand(-250000,200000) / 10000000 ) ) );
+    $ulkbps = floor($ulkbps * ( (float)rand(9350,9650) / 10000 ) ) ;
     
     if ( $pingmso >= 4 ) {
         $pingms = (int)$pingmso + rand(-3,10);
