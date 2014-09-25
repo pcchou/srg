@@ -103,4 +103,12 @@ Bukkit Plugin 版本：
 ------------------
 * 作者：[ifTNT](http://home.gamer.com.tw/homeindex.php?owner=happyjohn369)
 * 環境：Java7 for Bukkit 1.4+
-* 呼叫方法：Minecraft Server中用指令呼叫 `/srg <Download speed(kbps)> <Upload speed(kbps)> <Ping> [Server id]`
+* 呼叫方法：Minecraft Server中用指令呼叫 `/srg 參數`
+* 參數說明（請依照順序）：
+  * 下載頻寬(kbps)
+  * 上傳頻寬(kbps)
+  * Ping值(ms)
+  * (填0或負值會使用預設值)[伺服編號](http://paste.ubuntu.com/8410453/)
+* （Bukkit版本為Smart模式）
+* 例如`/srg 100000 100000 1`會產出
+  * $[真相](http://www.speedtest.net/result/3786521069.png)
