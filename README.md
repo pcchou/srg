@@ -88,7 +88,8 @@ Java版本：
   * 上傳頻寬(kbps)
   * Ping值(ms)
   * (填0或負值會使用預設值)[伺服編號](http://paste.ubuntu.com/8410453/) （[完整版本](http://www.speedtest.net/speedtest-servers-static.php)）
-* 例如com.github.YSITD.srg.api.getImage(65536,32768,1,0);會產出
+  * 使用Smart mode? (true為使用)
+* 例如com.github.YSITD.srg.api.getImage(65536, 32768, 1, 0, false);會產出
 
 ![真相](http://www.speedtest.net/result/3783897856.png)
 
@@ -102,4 +103,4 @@ Bukkit Plugin 版本：
 ------------------
 * 作者：[ifTNT](http://home.gamer.com.tw/homeindex.php?owner=happyjohn369)
 * 環境：Java7 for Bukkit 1.4+
-* 呼叫方法：Minecraft Server中用指令呼叫
+* 呼叫方法：Minecraft Server中用指令呼叫 `/srg <Download speed(kbps)> <Upload speed(kbps)> <Ping> [Server id]`

@@ -1,0 +1,7 @@
+name: Srg
+version: 0.1
+main: com.github.YSITD.srg.BukkitPlugin
+commands:
+  srg:
+    description: "generate a fake speed test result"
+    usage: "/srg <Download speed(kbps)> <Upload speed(kbps)> <Ping> [Server id]"

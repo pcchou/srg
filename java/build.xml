@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Srg" default="build">
+  <property name="ProjectName" value="Srg" />
+  <property name="Version" value="v0.1" />
+  <property name="SrcDir" value="src" />
+  <property name="BinDir" value="bin" />
+  <property name="JarFile" value="./${ProjectName}_${Version}_Plugin.jar" />
+
+  <target name="clean" description="清除已編譯的檔案">
+    <echo message="Cleaning Project..." />
+    <deltree dir="${BinDir}" />
+    <mkdir dir="${BinDir}" />
+    <echo message="Clean success!" />
+  </target>
+
+  <target name="build" depends="clean" description="編譯${ProjectName}">
+    <echo message="Compiling ${ProjectName}_${Version}" />
+    <javac destdir="${BinDir}" optimize="yes" encoding="UTF-8" srcdir="${SrcDir}">
+      <classpath>
+        <fileset dir="libs" includes="*.jar" />
+      </classpath>
+    </javac>
+    <echo message="Compile success!" />
+  </target>
+
+  <target name="plugin" description="產生BukkitPlugin">
+    <antcall target="build" />
+    <jar destfile="${JarFile}" basedir="." level="9">
+      <fileset dir="${BinDir}" />
+      <include name="plugin.yml" />
+    </jar>
+  </target>
+</project>
