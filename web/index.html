@@ -6,9 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="./jquery-2.1.1.min.js"></script>
-        <title>
-            SpeedTest生成器
-        </title>
+        <title>SpeedTest生成器</title>
        <link rel="stylesheet" href="./bootstrap.min.css">
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js">
@@ -20,73 +18,58 @@
         </style>
         <script type="text/javascript" src="./srg.js"></script>
     </head>
-    
     <body>
         <div class="container">
             <div class="page-header">
                 <div class="panel panel-info">
-                    <div class="panel-heading">
-                        SpeedTest測速圖生成器
-                    </div>
+                    <div class="panel-heading">SpeedTest測速圖生成器</div>
                     <div class="panel-body">
                         <form class="form" role="form" action="javascript:sub();">
-                            <label for="dlkbps">
-                                    下載速度：
-                                </label>
+                            <label for="dlkbps">下載速度：</label>
                             <div class="input-group">
-                                
                                 <input type="text" class="form-control" id="dlkbps" placeholder="請輸入下載速度 (留空則為1Mbps)">
                                 <span class="input-group-addon small">kbps</span>
                             </div>
                             <br>
-                            <label for="ulkbps">
-                                    上傳速度：
-                                </label>
+                            <label for="ulkbps">上傳速度：</label>
                             <div class="input-group">
-                                
                                 <input type="text" class="form-control" id="ulkbps" placeholder="請輸入上傳速度 (留空則為1Mbps)">
                                 <span class="input-group-addon">kbps</span>
                             </div>
                             <br>
-                            <label for="pingms">
-                                    Ping：
-                                </label>
+                            <label for="pingms">Ping：</label>
                             <div class="input-group">
-                                
                                 <input type="text" class="form-control" id="pingms" placeholder="請輸入Ping值 (留空則為20)">
                                 <span class="input-group-addon">ms</span>
                             </div>
                             <br>
                             <div class="radio-group">
                                 <label class="radio-inline">
-                                    <input class="js-has-other-field" id="radio_smart"
-                                    name="mode" type="radio" value="smart" required="required">
+                                    <input class="js-has-other-field" id="radio_smart" name="mode" type="radio" value="smart" required="required">
                                     仿真模式
                                 </label>
                                 <label class="radio-inline">
-                                    <input class="js-has-other-field" id="radio_normal"
-                                    name="mode" type="radio" value="normal" required="required">
+                                    <input class="js-has-other-field" id="radio_normal" name="mode" type="radio" value="normal" required="required">
                                     普通模式
                                 </label>
                             </div>
                             <br>
-                            <button type="submit" class="btn btn-default" id="sub">
-                                發送
-                            </button>
+                            <button type="submit" class="btn btn-default" id="sub">發送</button>
                         </form>
                     </div>
                 </div>
-                <div class="panel panel-default hide" id="res">
-                    <div class="panel-heading">
-                        結果區
-                    </div>
+                <div class="panel panel-success hide" id="res">
+                    <div class="panel-heading">結果區</div>
                     <div class="panel-body">
-                        <img src="" class="img-responsive"
-                        alt="Responsive image" id="img">
+                        <img src="" class="img-responsive" alt="Responsive image" id="img">
+                        <br>
+                        <strong>
+                        圖片連結：
+                        <a href="" alt="Responsive link" id="link">點我</a>
+                        </strong>
                     </div>
                 </div>
             </div>
         </div>
     </body>
-
 </html>
