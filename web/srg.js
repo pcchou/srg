@@ -50,6 +50,8 @@ function sub() {
   		$.get(path, function(result){
   			$('#res').removeClass('hide');
     		$('#img').attr('src',result);
+            $('#link').attr('href',result);
+            $('#link').html(result);
             var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
             $body.animate({
                 scrollTop: 700
