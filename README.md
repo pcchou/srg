@@ -94,6 +94,12 @@ Java版本：
 
 HTML + JavaScript UI：
 ------------------
-* 作者：[鄭仁翔](https://github.com/james58899)、[海豹](http://about.me/seadog007)
+* 作者：[海豹](http://about.me/seadog007)、[鄭仁翔](https://github.com/james58899)
 * 環境：HTML, JavaScript
 * 呼叫方法：將web下的檔案跟php底下的檔案放在一起即可
+
+Bukkit Plugin 版本：
+------------------
+* 作者：[ifTNT](http://home.gamer.com.tw/homeindex.php?owner=happyjohn369)
+* 環境：Java7 for Bukkit 1.4+
+* 呼叫方法：Minecraft Server中用指令呼叫
