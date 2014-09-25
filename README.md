@@ -91,3 +91,9 @@ Java版本：
 * 例如com.github.YSITD.srg.api.getImage(65536,32768,1,0);會產出
 
 ![真相](http://www.speedtest.net/result/3783897856.png)
+
+HTML + JavaScript UI：
+------------------
+* 作者：[海豹](http://about.me/seadog007)
+* 環境：HTML, JavaScript
+* 呼叫方法：將web下的檔案跟php底下的檔案放在一起即可
