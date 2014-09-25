@@ -111,5 +111,5 @@ Bukkit Plugin 版本：
   * (填0或負值會使用預設值)[伺服編號](http://paste.ubuntu.com/8410453/)
 * （Bukkit版本為Smart模式）
 * 例如`/srg 100000 100000 1`會產出
-* 
+
 ![真相](http://www.speedtest.net/result/3786521069.png)
