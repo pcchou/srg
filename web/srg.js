@@ -3,7 +3,7 @@ function sub() {
     if (!isNaN($("#dlkbps").val())) {
         var dlkbps = $("#dlkbps").val();
         if (dlkbps == "") {
-            dlkbps = 1000;
+            dlkbps = 10000;
         }
         if (dlkbps < 0 && err != 1) {
             alert("下載速度不可為負值");
@@ -16,7 +16,7 @@ function sub() {
     if (!isNaN($("#ulkbps").val())) {
         var ulkbps = $("#ulkbps").val();
         if (ulkbps == "") {
-            ulkbps = 1000;
+            ulkbps = 10000;
         }
         if (ulkbps < 0 && err != 1) {
             alert("上傳速度不可為負值");
@@ -29,7 +29,7 @@ function sub() {
     if (!isNaN($("#pingms").val())) {
         var pingms = $("#pingms").val();
         if (pingms == "") {
-            pingms = 20;
+            pingms = 7;
         }
         if (pingms < 0 && err != 1) {
             alert("Ping值不可為負值");
