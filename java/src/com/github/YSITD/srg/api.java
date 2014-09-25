@@ -16,15 +16,21 @@ import java.security.NoSuchAlgorithmException;
 
 public class api {
   public static void main(String[] args){
-    String ResultId = getImage(65536,32768,1,0);
+    String ResultId = getImage(100000,100000,1,0,true);
     System.out.println( (ResultId == null) ? "Something went wrong" :
                                              "Image: http://www.speedtest.net/result/"+ResultId+".png" );
   }
-  public static String getImage(int DlSpeed, int UlSpeed, int ping, int ServerId) { 
+  public static String getImage(int DlSpeed, int UlSpeed, int ping, int ServerId, boolean SmartMode) { 
     try {
       ServerId = (ServerId <= 0) ? 2181 : ServerId;
       DlSpeed = (DlSpeed < 0) ? 0 : DlSpeed;
       UlSpeed = (UlSpeed < 0) ? 0 : UlSpeed;
+      
+      if(SmartMode){
+    	  DlSpeed = (int)(DlSpeed * (0.975-Math.random()*0.3));
+    	  UlSpeed = (int)(UlSpeed * (0.975-Math.random()*0.3));
+    	  UlSpeed = (int)(UlSpeed * (0.965-Math.random()*0.3));
+      }
 			  
       URL url = new URL("http://www.speedtest.net/api/api.php"); 
       HttpURLConnection URLConn = (HttpURLConnection) url.openConnection(); 
@@ -69,7 +75,7 @@ public class api {
         if(OneField.matches("resultid=\\d+")) ResultId=OneField.substring(9);
       }
 		        
-      return ResultId;
+      return (ResultId=="0") ? null : ResultId ;
 		        
     } catch (IOException e) { 
       e.printStackTrace();
