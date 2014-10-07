@@ -15,6 +15,23 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If Not Server.Items.Contains(Server.Text) Then
+            MsgBox("Error - Invalid server")
+            Exit Sub
+        End If
+        If Val(Download_Mbps_value.Text) < 0 Or Val(Download_Mbps_value.Text) > 2000 Then
+            MsgBox("Error - Invalid download speed value")
+            Exit Sub
+        End If
+        If Val(Upload_Mbps_value.Text) < 0 Or Val(Upload_Mbps_value.Text) > 2000 Then
+            MsgBox("Error - Invalid upload speed value")
+            Exit Sub
+        End If
+        If Val(Ping_ms_value.Text) < 0 Or Val(Ping_ms_value.Text) > 2000 Then
+            MsgBox("Error - Invalid Ping ms value")
+            Exit Sub
+        End If
+
         Dim server_value, DLspeed, UpSpeed As Integer
         Dim tmp As String()
         Dim mode As String

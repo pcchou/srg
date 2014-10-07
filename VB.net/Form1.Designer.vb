@@ -161,7 +161,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Server)
         Me.Controls.Add(Me.Server_Label)
         Me.Name = "Form1"
-        Me.Text = "speedtest-result-generator (warning : GIGO)"
+        Me.Text = "speedtest-result-generator"
         CType(Me.Picture, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
