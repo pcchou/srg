@@ -38,7 +38,11 @@
         DLspeed = Download_Mbps_value.Text * 1000
         UpSpeed = Upload_Mbps_value.Text * 1000
         tmp = Split(Server.Text, " ")
-        server_value = tmp(1).Substring(0, tmp(1).Length - 1)
+        If tmp(0) = "" Then
+            server_value = tmp(1).Substring(0, tmp(1).Length - 1)
+        Else
+            server_value = tmp(0).Substring(0, tmp(0).Length - 1)
+        End If
         If CheckBox1.Checked = True Then
             mode = "smart"
         Else
