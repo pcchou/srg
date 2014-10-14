@@ -14,7 +14,7 @@
         Server.Text = Server.Items.Item(0)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub ResultGen_DoWork(sender As Object, e As EventArgs) Handles Button1.Click
         If Not Server.Items.Contains(Server.Text) Then
             MsgBox("Error - Invalid server")
             Exit Sub
@@ -51,7 +51,7 @@
         PictureLink.Navigate(url_php & "?dlkbps=" & DLspeed & "&ulkbps=" & UpSpeed & "&pingms=" & Ping_ms_value.Text & "&srv=" & server_value & "&mode=" & mode)
     End Sub
 
-    Private Sub PictureLink_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles PictureLink.DocumentCompleted
+    Private Sub GetPicture_DoWork(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles PictureLink.DocumentCompleted
         Picture.Image = New System.Drawing.Bitmap(New IO.MemoryStream(New System.Net.WebClient().DownloadData(PictureLink.DocumentText)))
     End Sub
 End Class

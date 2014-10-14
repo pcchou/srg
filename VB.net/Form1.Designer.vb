@@ -34,6 +34,8 @@ Partial Class Form1
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureLink = New System.Windows.Forms.WebBrowser()
         Me.Picture = New System.Windows.Forms.PictureBox()
+        Me.ResultGen = New System.ComponentModel.BackgroundWorker()
+        Me.GetPicture = New System.ComponentModel.BackgroundWorker()
         CType(Me.Picture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -179,5 +181,7 @@ Partial Class Form1
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents PictureLink As System.Windows.Forms.WebBrowser
     Friend WithEvents Picture As System.Windows.Forms.PictureBox
+    Friend WithEvents ResultGen As System.ComponentModel.BackgroundWorker
+    Friend WithEvents GetPicture As System.ComponentModel.BackgroundWorker
 
 End Class
