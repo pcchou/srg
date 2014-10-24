@@ -59,11 +59,11 @@ PHP版本：
   * {ulkbps} 上傳頻寬(kbps)
   * {pingms} Ping值(ms)
   * {srv} (可選)[伺服編號](http://paste.ubuntu.com/8410453/) （[完整版本](http://www.speedtest.net/speedtest-servers-static.php)
-* 例如：`http://yourdomain.org/url.php?dlkbps=314150&ulkbps=926530&pingms=58979` 會產生出（網址）
+* 例如：`http://yourdomain.org/yourpath/url.php?dlkbps=314150&ulkbps=926530&pingms=58979` 會產生出（網址）
 
 ![真相](http://www.speedtest.net/result/3782546990.png)
 
-* `http://yourdomain.org/url.php?dlkbps=100000&ulkbps=40000&pingms=6&mode=smart`
+* `http://yourdomain.org/yourpath/url.php?dlkbps=100000&ulkbps=40000&pingms=6&mode=smart`
 
 ![真相](http://www.speedtest.net/result/3783848922.png)
 
