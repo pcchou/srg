@@ -24,7 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.Server_Label = New System.Windows.Forms.Label()
         Me.Server = New System.Windows.Forms.ComboBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.SmartMode = New System.Windows.Forms.CheckBox()
         Me.Ping_ms = New System.Windows.Forms.Label()
         Me.Ping_ms_value = New System.Windows.Forms.TextBox()
         Me.Download_Mbps_value = New System.Windows.Forms.TextBox()
@@ -32,10 +32,9 @@ Partial Class Form1
         Me.Upload_Mbps_value = New System.Windows.Forms.TextBox()
         Me.Upload_Mbps = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.PictureLink = New System.Windows.Forms.WebBrowser()
         Me.Picture = New System.Windows.Forms.PictureBox()
         Me.ResultGen = New System.ComponentModel.BackgroundWorker()
-        Me.GetPicture = New System.ComponentModel.BackgroundWorker()
+        Me.ResultLink = New System.Windows.Forms.TextBox()
         CType(Me.Picture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -58,15 +57,15 @@ Partial Class Form1
         Me.Server.Sorted = True
         Me.Server.TabIndex = 1
         '
-        'CheckBox1
+        'SmartMode
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(394, 125)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(78, 16)
-        Me.CheckBox1.TabIndex = 6
-        Me.CheckBox1.Text = "SmartMode"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.SmartMode.AutoSize = True
+        Me.SmartMode.Location = New System.Drawing.Point(394, 125)
+        Me.SmartMode.Name = "SmartMode"
+        Me.SmartMode.Size = New System.Drawing.Size(78, 16)
+        Me.SmartMode.TabIndex = 6
+        Me.SmartMode.Text = "SmartMode"
+        Me.SmartMode.UseVisualStyleBackColor = True
         '
         'Ping_ms
         '
@@ -128,30 +127,33 @@ Partial Class Form1
         Me.Button1.Text = "Start"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'PictureLink
-        '
-        Me.PictureLink.Location = New System.Drawing.Point(13, 198)
-        Me.PictureLink.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.PictureLink.Name = "PictureLink"
-        Me.PictureLink.Size = New System.Drawing.Size(459, 47)
-        Me.PictureLink.TabIndex = 14
-        '
         'Picture
         '
-        Me.Picture.Location = New System.Drawing.Point(14, 251)
+        Me.Picture.Location = New System.Drawing.Point(14, 262)
         Me.Picture.Name = "Picture"
         Me.Picture.Size = New System.Drawing.Size(100, 50)
         Me.Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.Picture.TabIndex = 15
         Me.Picture.TabStop = False
         '
+        'ResultGen
+        '
+        '
+        'ResultLink
+        '
+        Me.ResultLink.Location = New System.Drawing.Point(13, 198)
+        Me.ResultLink.Multiline = True
+        Me.ResultLink.Name = "ResultLink"
+        Me.ResultLink.Size = New System.Drawing.Size(459, 58)
+        Me.ResultLink.TabIndex = 16
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(484, 382)
+        Me.ClientSize = New System.Drawing.Size(484, 415)
+        Me.Controls.Add(Me.ResultLink)
         Me.Controls.Add(Me.Picture)
-        Me.Controls.Add(Me.PictureLink)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Upload_Mbps_value)
         Me.Controls.Add(Me.Upload_Mbps)
@@ -159,7 +161,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Download_Mbps)
         Me.Controls.Add(Me.Ping_ms_value)
         Me.Controls.Add(Me.Ping_ms)
-        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.SmartMode)
         Me.Controls.Add(Me.Server)
         Me.Controls.Add(Me.Server_Label)
         Me.Name = "Form1"
@@ -171,7 +173,7 @@ Partial Class Form1
     End Sub
     Friend WithEvents Server_Label As System.Windows.Forms.Label
     Friend WithEvents Server As System.Windows.Forms.ComboBox
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents SmartMode As System.Windows.Forms.CheckBox
     Friend WithEvents Ping_ms As System.Windows.Forms.Label
     Friend WithEvents Ping_ms_value As System.Windows.Forms.TextBox
     Friend WithEvents Download_Mbps_value As System.Windows.Forms.TextBox
@@ -179,9 +181,8 @@ Partial Class Form1
     Friend WithEvents Upload_Mbps_value As System.Windows.Forms.TextBox
     Friend WithEvents Upload_Mbps As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents PictureLink As System.Windows.Forms.WebBrowser
     Friend WithEvents Picture As System.Windows.Forms.PictureBox
     Friend WithEvents ResultGen As System.ComponentModel.BackgroundWorker
-    Friend WithEvents GetPicture As System.ComponentModel.BackgroundWorker
+    Friend WithEvents ResultLink As System.Windows.Forms.TextBox
 
 End Class
