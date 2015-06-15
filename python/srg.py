@@ -16,59 +16,75 @@
 # http://about.me/pcchou
 
 import sys
-from urllib2 import urlopen, Request
 from hashlib import md5
-from urlparse import parse_qs
 from random import randrange
 from math import floor
 
-try:
-      sys.argv[5]
-except IndexError:
-    srv = 2181
-else:
-    srv = sys.argv[5]
+PY2 = sys.version_info[0] == 2
+PY3 = sys.version_info[0] == 3
 
-if sys.argv[1] == "normal":
-    pingms = sys.argv[4]
-    dlkbps = sys.argv[2]
-    ulkbps = sys.argv[3]
-elif sys.argv[1] == "smart":
-    dlkbps = floor( float(sys.argv[2]) * float(randrange(9450000,9750000)) / 10000000 )
-    ulkbps = floor( float(sys.argv[3]) * float(randrange(9450000,9750000)) / 10000000 )
-    ulkbps = floor( ulkbps * float(randrange(9350,9650)) / 10000 )
-    if sys.argv[4] >= 4:
-        pingms = int(sys.argv[4]) + randrange(-3,10)
+if PY3:
+    from urllib.request import urlopen
+    from urllib.request import Request
+    from urllib.parse import parse_qs
+else:
+    from urllib2 import urlopen, Request
+    from urlparse import parse_qs
+
+
+def main():
+    try:
+        sys.argv[5]
+    except IndexError:
+        srv = 2181
     else:
+        srv = sys.argv[5]
+
+    if sys.argv[1] == "normal":
         pingms = sys.argv[4]
-else:
-    print "This is madness!"
-    sys.exit()
+        dlkbps = sys.argv[2]
+        ulkbps = sys.argv[3]
+    elif sys.argv[1] == "smart":
+        dlkbps = floor(
+            float(sys.argv[2]) * float(randrange(9450000, 9750000)) / 10000000)
+        ulkbps = floor(
+            float(sys.argv[3]) * float(randrange(9450000, 9750000)) / 10000000)
+        ulkbps = floor(ulkbps * float(randrange(9350, 9650)) / 10000)
+        if int(sys.argv[4]) >= 4:
+            pingms = int(sys.argv[4]) + randrange(-3, 10)
+        else:
+            pingms = sys.argv[4]
+    else:
+        print("This is madness!")
+        sys.exit()
 
-rawRequest = [
-    'download=%s' % int(dlkbps),
-    'ping=%s' % pingms,
-    'upload=%s' % int(ulkbps),
-    'promo=',
-    'startmode=%s' % 'pingselect',
-    'recommendedserverid=%s' % srv,
-    'accuracy=%s' % 1,
-    'serverid=%s' % srv,
-    'hash=%s' % md5(('%s-%s-%s-%s' %
-                     (pingms, int(ulkbps), int(dlkbps), '297aae72'))
-                    .encode()).hexdigest()]
+    rawRequest = [
+        'download=%s' % int(dlkbps),
+        'ping=%s' % pingms,
+        'upload=%s' % int(ulkbps),
+        'promo=',
+        'startmode=%s' % 'pingselect',
+        'recommendedserverid=%s' % srv,
+        'accuracy=%s' % 1,
+        'serverid=%s' % srv,
+        'hash=%s' % md5(('%s-%s-%s-%s' %
+                         (pingms, int(ulkbps), int(dlkbps), '297aae72'))
+                        .encode()).hexdigest()]
 
-req = Request('http://www.speedtest.net/api/api.php',
-              data='&'.join(rawRequest).encode())
-req.add_header('Referer', 'http://c.speedtest.net/flash/speedtest.swf')
-x = urlopen(req)
-req = x.read()
-code = x.code
-x.close()
+    req = Request('http://www.speedtest.net/api/api.php',
+                  data='&'.join(rawRequest).encode())
+    req.add_header('Referer', 'http://c.speedtest.net/flash/speedtest.swf')
+    x = urlopen(req)
+    req = x.read()
+    code = x.code
+    x.close()
 
-reqresult = parse_qs(req.decode())
-results = reqresult.get('resultid')
+    reqresult = parse_qs(req.decode())
+    results = reqresult.get('resultid')
 
-print('Image: http://www.speedtest.net/result/%s.png' %
-       results[0])
-print('In a webpage: http://www.speedtest.net/my-result/%s' % results[0])
+    print('Image: http://www.speedtest.net/result/%s.png' %
+          results[0])
+    print('In a webpage: http://www.speedtest.net/my-result/%s' % results[0])
+
+if __name__ == "__main__":
+    main()
