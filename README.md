@@ -23,6 +23,22 @@ Python版本：
 
 ![真相](http://www.speedtest.net/result/3783836539.png)
 
+Python 精靈引導版：
+------------------
+
+* 作者：[BobbyHo](http://bobbyrealms.info)
+* 環境：Python 3
+* 呼叫方法：直接使用Python直譯器執行`srg_stepbystep.py`，跟隨Terminal指示即可
+* 參數說明：
+  * 速度單位 (mbps或kbps，會自動為你轉換)
+  * normal或smart (smart會自動為您隨機輸出，給你最近似實際情況的數值)
+  * 下載頻寬(kbps/mbps)
+  * 上傳頻寬(kbps/mbps)
+  * Ping值(ms)
+  * (可選)[伺服編號](http://paste.ubuntu.com/8410453/) （[完整版本](http://www.speedtest.net/speedtest-servers-static.php)）
+* 效果預覽
+![效果](http://i.imgur.com/71sJ3Lo.png)
+
 Bash版本：
 ------------------
 
