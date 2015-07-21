@@ -7,7 +7,7 @@ Python版本：
 ------------------
 
 * 作者：[Pc Chou](http://about.me/pcchou)
-* 環境：Python 2
+* 環境：Python 3 (Python 2 Unsupported)
 * 呼叫方法： `python srg.py 參數`
 * 參數說明（請依照順序）：
   * normal或smart (smart會自動為您隨機輸出，給你最近似實際情況的數值)
@@ -27,7 +27,7 @@ Python 精靈引導版：
 ------------------
 
 * 作者：[BobbyHo](http://bobbyrealms.info)
-* 環境：Python 3
+* 環境：Python 3 (Python 2 Unsupported)
 * 呼叫方法：直接使用Python直譯器執行`srg_stepbystep.py`，跟隨Terminal指示即可
 * 參數說明：
   * 速度單位 (mbps或kbps，會自動為你轉換)
